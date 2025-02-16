@@ -2,6 +2,10 @@
 
 // If need, change your variables before importing Bulma
 $title-color: #ff0000;
+$card-background-color: #00000000;
+$modal-content-width: 60rem;
+$experience-icons-color: #FFFFFF; //hsl(47.8, 75%, 63.9%);
+
 
 @import "bulma/bulma.scss";
 @import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
@@ -11,7 +15,6 @@ $title-color: #ff0000;
     font-weight: 400;
     font-style: normal;
 }
-
 
 :root {
     --bulma-primary-h: 0deg;
@@ -89,12 +92,16 @@ a.is-link:hover {
 }
 
 .card-background-color {
-    background-color: #a16000
+    background-color: $card-background-color;
+}
+
+--bulma-card-background-color {
+    background-color: $card-background-color;
 }
 
 .main-section-background-image {
     background-image: url('./src/images/LogoPrzyciete.jpg');
-    background-position: center center;
+    background-position: top;
     background-repeat: no-repeat;
     background-attachment: scroll;
     background-size: contain;
@@ -106,16 +113,233 @@ a.is-link:hover {
         background-size: cover;
     }
 }
+
+@media (max-width: 1600px) {
+    .main-section-background-image {
+        background-size: auto;
+    }
+}
+
 .text-shadow {
     text-shadow: 5px 4px 10px rgba(0, 0, 0, 1);
 }
 
 .main-section-font-color {
-    color: #FFCB00;
+    color: #ffb300 !important;
+}
+
+.main-section-font-color-blue {
+    color: #056df2 !important;
 }
 
 .gallery-title {
-    font-size: 3.9rem;
+    font-size: 5rem !important;
 }
 
+.oswald-font-300 {
+    font-family: "Oswald", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 300;
+    font-style: normal;
+}
+
+.description-text-box {
+    background-color: #ffffff0f !important;
+}
+
+/* STYLE DLA REACT-PLAYER */
+
+.player-wrapper {
+    width: auto; // Reset width
+    height: 100%; // Reset height
+}
+
+.react-player {
+    padding-top: 56.25%; // Percentage ratio for 16:9
+    position: relative; // Set to relative
+}
+
+.react-player > div {
+    position: absolute; // Scaling will occur since parent is relative now
+}
+
+.element {
+    width: 100%;
+    height: auto;
+}
+
+.fb-video-wrapper {
+    position: relative;
+    height: 0;
+    padding-top: 5%;
+}
+
+.fb-video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/*--------------------------------*/
+
+/*MODAL*/
+.modal-card {
+    --bulma-modal-content-width: 95rem;
+    height: 90vw;
+}
+/*--------------------------------*/
+
+/* VIDEO */
+.ytp-hide-controls ytp-cued-thumbnail-overlay-image {
+    z-index: 60;
+}
+
+.is-rounded {
+    border-radius: 20px;
+    overflow: hidden;
+    z-index: 1;
+    height: 320px;
+    width: 480px;
+}
+/*--------------------------------*/
+
+/* EXPERIENCE */
+.experience-icon-color {
+    color: $experience-icons-color;
+}
+/*--------------------------------*/
+
+/* TAGI */
+
+.montaz {
+    color: #ffb300 !important;
+    background-color: #2e2e2e !important; /* ciemne tło dla kontrastu */
+    font-size: 1.5rem !important;
+}
+
+.filmowanie {
+    color: #056df2 !important;
+    background-color: #2e2e2e !important;
+    font-size: 1.5rem !important;
+}
+
+.youtubowe {
+    color: #ff0000 !important;
+    background-color: #ffe5e5 !important; /* jasne tło dla czerwonego */
+}
+
+.shorts {
+    color: #ff6600 !important;
+    background-color: #ffe5cc !important; /* jasne pomarańczowe tło */
+}
+
+.edukacyjne {
+    color: #4caf50 !important;
+    background-color: #e6f7e6 !important; /* jasne zielone tło */
+}
+
+.gameplay {
+    color: #ff33cc !important;
+    background-color: #ffe5f4 !important; /* jasne różowe tło */
+}
+
+.cinematic {
+    color: #8a8a8a !important;
+    background-color: #f0f0f0 !important; /* jasne, neutralne tło */
+}
+
+.reklamowe {
+    color: #6b6b6b !important;
+    background-color: #f5f5f5 !important; /* jasne szare tło */
+}
+
+.podroznicze {
+    color: #2196f3 !important;
+    background-color: #e3f2fd !important; /* jasne niebieskie tło */
+}
+
+.weselne {
+    color: #a0a0a0 !important;
+    background-color: #f0f0f0 !important; /* jasne neutralne tło */
+}
+
+.eventowe {
+    color: #7a7a7a !important;
+    background-color: #f5f5f5 !important; /* jasne neutralne tło */
+}
+
+.produktowe {
+    color: #5c5c5c !important;
+    background-color: #eaeaea !important; /* jasne neutralne tło */
+}
+
+.vlogi {
+    color: #ff9900 !important;
+    background-color: #fff0cc !important; /* jasne pomarańczowe tło */
+}
+
+.wywiady {
+    color: #999999 !important;
+    background-color: #f0f0f0 !important; /* jasne neutralne tło */
+}
+
+.teledyski {
+    color: #cc33ff !important;
+    background-color: #fbeaff !important; /* jasne fioletowe tło */
+}
+
+.montaz-filmowanie-container {
+    margin-bottom: 10px;
+}
+
+.tags-container {
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+    padding: 10px;
+}
+
+/*--------------------------------*/
+.video-container {
+    transition: transform 0.3s ease, z-index 0.3s ease;
+
+    &.is-playing {
+        transform: scale(2);
+        z-index: 10;
+    }
+
+    &.is-paused {
+        transform: scale(1);
+        z-index: 1;
+    }
+}
+
+
+/* Styl odtwarzacza, aby pojawiał się na samej górze */
+.video-player-wrapper {
+    position: fixed; // Fixed to stay on top of everything
+    top: 0;
+    left: 0;
+    width: 100vw; // Pełna szerokość ekranu
+    height: 100vh; // Pełna wysokość ekranu
+    z-index: 9999; // Upewnij się, że ten element ma wysoki z-index
+    background-color: rgba(0, 0, 0, 0.9); // Opcjonalnie, półprzezroczyste tło
+}
+
+/* Sam odtwarzacz (ReactPlayer) */
+.react-player {
+    width: 100%;
+    height: 100%;
+    position: absolute; // Spraw, by wideo zajmowało całą przestrzeń wrappera
+    top: 0;
+    left: 0;
+}
+
+/* Ukryj elementy pod odtwarzaczem */
+.modal-card {
+    z-index: 1; // Ustaw niższy z-index dla reszty modala
+}
 

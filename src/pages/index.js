@@ -1,24 +1,29 @@
-import * as React from "react";
+﻿import * as React from "react";
 import "../../mystyles.scss";
-import StarterPage from "./sections/StarterPage";
 import About from "./sections/About";
+import Contact from "./sections/Contact";
+import Footer from "./sections/Footer";
+import Gallery from "./sections/Gallery";
+import StarterPage from "./sections/StarterPage";
+import Description from "./sections/Description";
+import SocialIcons from "./sections/SocialIcons";
+import ExperienceSection from "./sections/ExperienceSection";
 
 const IndexPage = () => {
   return (
     <main className="has-background-dark-main">
           <StarterPage />
           <About />
-          <footer class="footer">
-              <div class="content has-text-centered">
-                  <p>
-                      <strong>Mateusz Tórz- portfolio</strong> &copy;Maksymilian Laskowski.
-                  </p>
-              </div>
-          </footer>
+          <Description />
+          <Gallery />
+          <ExperienceSection />
+          <Contact />
+          <SocialIcons />
+          <Footer />
     </main>
   )
 }
 
 export default IndexPage
 
-export const Head = () => <title>Home Page</title>
+export const Head = () => <title>Mateusz Tórz Studio Filmowe</title>

@@ -1,30 +1,21 @@
-import React from 'react';
-import Gallery from './Gallery';
+﻿import React from 'react';
 
 const About = () => {
-    return (
-        <section className="container pt-6 mb-6">
-            <div className="columns is-variable is-8 is-fullheight mt-6 pb-1">
-                <div className="column is-one-third-desktop is-full-mobile is-flex is-flex-direction-column pb-0">
-                    <div className=" is-flex-grow-1">
-                        <h2 className="title gallery-title has-text-title anton-regular text-shadow has-text-weight-bold p-1">
-                            Sprawdź moje ostatnie projekty
-                        </h2>
-                    </div>
-                    <div className="has-text-centered">
-                        <button
-                            className="button is-primary is-large mt-3"
-                            aria-label="Zobacz więcej projektów"
-                            style={ { width: 'auto' } } 
-                        >
-                            Zobacz więcej
-                        </button>
-                    </div>
-                </div>
-                <div className="column"><Gallery /></div>
-            </div>
-        </section>
-    )
-}
+	return (
+		<section className="section">
+              <div className="container">
+                  <div className="columns">
+                      <div className="column is-half-desktop">
+                          <img src="https://picsum.photos/800/600"/>
+                      </div>
+                      <div className="column">
+                        <h2 className="title oswald-font-300 is-1 text-shadow has-text-title">Cześć!</h2>
+                        <p className="is-size-3 has-text-main">Mam na imię Mateusz.<br />Stwórzmy razem Twoją wspaniałą,<br /> filmową historię!</p>
+                      </div>
+                  </div>
+              </div>
+          </section>
+	)
+};
 
-export default About;
+export default About
